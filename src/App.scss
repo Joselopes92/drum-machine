@@ -1,0 +1,54 @@
+// Variables
+$primary-color: #282c34;
+$secondary-color: #61dafb;
+$active-color: #21a1f1;
+$text-color: white;
+
+// Mixin for centering content
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Drum Machine Styles
+#drum-machine {
+  @include center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $primary-color;
+  color: $text-color;
+  font-family: Arial, sans-serif;
+}
+
+#display {
+  font-size: 24px;
+  margin-bottom: 20px;
+  background-color: $secondary-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: $primary-color;
+}
+
+.drum-pads {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.drum-pad {
+  @include center;
+  width: 100px;
+  height: 100px;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: $primary-color;
+  transition: background-color 0.3s;
+
+  &:active {
+    background-color: $active-color;
+  }
+}
